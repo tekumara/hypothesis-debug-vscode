@@ -7,7 +7,6 @@ Hypothesis debugging with vscode
 Prerequisites:
 
 - make
-- node (required for pyright)
 - python >= 3.7
 
 To start:

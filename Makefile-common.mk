@@ -24,8 +24,8 @@ $(venv): setup.py $(pip)
 clean:
 	rm -rf $(venv)
 
-## create venv and install this package and hooks
-install: $(venv) node_modules $(if $(value CI),,install-hooks)
+## create venv and install this package
+install: $(venv)
 
 ## format all code
 format: $(venv)
@@ -40,27 +40,7 @@ check: lint pyright
 lint: $(venv)
 	$(venv)/bin/flake8
 
-node_modules: package.json
-	npm install --no-save
-	touch node_modules
-
-## pyright
-pyright: node_modules $(venv)
-# activate venv so pyright can find dependencies
-	PATH="$(venv)/bin:$$PATH" node_modules/.bin/pyright
-
 ## run tests
 test: $(venv)
 	$(venv)/bin/pytest
 
-## run pre-commit git hooks on all files
-hooks: $(venv)
-	$(venv)/bin/pre-commit run --show-diff-on-failure --color=always --all-files --hook-stage push
-
-install-hooks: .git/hooks/pre-commit .git/hooks/pre-push
-
-.git/hooks/pre-commit: $(venv)
-	$(venv)/bin/pre-commit install -t pre-commit
-
-.git/hooks/pre-push: $(venv)
-	$(venv)/bin/pre-commit install -t pre-push
