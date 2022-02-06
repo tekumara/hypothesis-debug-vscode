@@ -4,12 +4,12 @@ setup(
     name="hdebug",
     version="0.0.0",
     description="Hypothesis debugging with vscode",
-    python_requires=">=3.7",
+    python_requires=">=3.9",
     packages=find_packages(exclude=["tests"]),
     package_data={
         "": ["py.typed"],
     },
-    install_requires=[],
+    install_requires=["hypothesis==6.36.1"],
     extras_require={
         "dev": [
             "autoflake~=1.4",
