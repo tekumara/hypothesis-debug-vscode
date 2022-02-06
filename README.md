@@ -1,6 +1,7 @@
 # hdebug
 
-Hypothesis debugging with vscode
+Hypothesis debugging with vscode.
+Reproduction of debugpy issue [#847](https://github.com/microsoft/debugpy/issues/837).
 
 ## Getting started
 
