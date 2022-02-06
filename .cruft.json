@@ -1,0 +1,15 @@
+{
+  "template": "git@github.com:tekumara/python-typed-template.git",
+  "commit": "eb62dc0c8382b673c15dbd1f2e96cd280aeb18cf",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "repo_name": "hypothesis-debug-vscode",
+      "package_name": "hdebug",
+      "distribution_name": "hdebug",
+      "description": "Hypothesis debugging with vscode",
+      "_template": "git@github.com:tekumara/python-typed-template.git"
+    }
+  },
+  "directory": null
+}
