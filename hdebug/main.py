@@ -1,9 +1,12 @@
-import sys
-from typing import List
+import debugpy
+import pytest
 
 
-def main(args: List[str] = sys.argv[1:]) -> None:
-    print(f"hello {args[0]}!")
+def main() -> None:
+    print("Attach vscode to debugger on port 62888")
+    debugpy.listen(62888)
+    debugpy.wait_for_client()  # blocks execution until client is attached
+    pytest.main()
 
 
 if __name__ == "__main__":
