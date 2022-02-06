@@ -1,5 +1,4 @@
 .idea/
-.vscode/
 *.code-workspace
 *.iml
 .pytest_cache/
