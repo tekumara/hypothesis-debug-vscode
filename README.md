@@ -17,6 +17,7 @@ To start:
 To demonstrate the issue:
 
 - set a breakpoint on line 10 in [tests/test_example.py](tests/test_example.py)
-- in the terminal run `hdebug`
+- in the terminal activate the virtualenv if needed: `. .venv/bin/activate`
+- run `hdebug`
 - in vscode run the `Attach to 62888` launch config
 - observe that the breakpoint is not hit
